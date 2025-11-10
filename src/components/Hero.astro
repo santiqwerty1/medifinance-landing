@@ -1,6 +1,14 @@
 ---
 // Hero section with compelling headline and CTA
 import LanguageSwitcher from './LanguageSwitcher.astro';
+import { getTranslations } from '../i18n/translations';
+
+interface Props {
+  lang?: 'es' | 'en' | 'pt' | 'it';
+}
+
+const { lang = 'es' } = Astro.props;
+const t = getTranslations(lang);
 ---
 
 <!-- Simple Navigation Bar -->
@@ -31,21 +39,19 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
       <div class="text-center lg:text-left">
         <div class="inline-block mb-4 px-4 py-2 bg-purple-100 dark:bg-purple-900/50 rounded-full">
           <span class="text-purple-700 dark:text-purple-300 font-semibold text-sm">
-            ✨ Gratis para siempre • Sin tarjeta de crédito
+            ✨ {lang === 'es' ? 'Gratis para siempre • Sin tarjeta de crédito' : 'Free forever • No credit card required'}
           </span>
         </div>
 
         <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-          Gestión Financiera Simple para
+          {t.hero.title.split('para')[0]}
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
-            Profesionales de la Salud
+            {lang === 'es' ? 'Profesionales de la Salud' : 'Healthcare Professionals'}
           </span>
         </h1>
 
         <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-          Gestiona tus pacientes, sesiones e ingresos en un solo lugar.
-          Sincronización en tiempo real entre todos tus dispositivos.
-          <strong>Comienza gratis con hasta 20 pacientes.</strong>
+          {t.hero.subtitle}
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
@@ -53,7 +59,7 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
             href="https://app.medifinance.app"
             class="group px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl text-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
           >
-            Comenzar Gratis
+            {t.hero.cta}
             <span class="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
           </a>
 
@@ -61,7 +67,7 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
             href="#features"
             class="px-8 py-4 border-2 border-purple-600 dark:border-purple-400 text-purple-600 dark:text-purple-400 rounded-xl text-lg font-semibold hover:bg-purple-50 dark:hover:bg-purple-900/30 transition"
           >
-            Ver Características
+            {t.hero.ctaSecondary}
           </a>
         </div>
 
@@ -70,19 +76,19 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
             <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            Sin tarjeta de crédito
+            {lang === 'es' ? 'Sin tarjeta de crédito' : 'No credit card'}
           </div>
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            20 pacientes gratis
+            {lang === 'es' ? '20 pacientes gratis' : '20 patients free'}
           </div>
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            Acceso inmediato
+            {lang === 'es' ? 'Acceso inmediato' : 'Instant access'}
           </div>
         </div>
       </div>
@@ -98,7 +104,7 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
                 Dashboard Preview
               </p>
               <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
-                Agrega una captura de pantalla aquí
+                {lang === 'es' ? 'Agrega una captura de pantalla aquí' : 'Add a screenshot here'}
               </p>
             </div>
           </div>
@@ -111,8 +117,8 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
               <span class="text-2xl">✓</span>
             </div>
             <div>
-              <div class="text-sm text-gray-500 dark:text-gray-400">Sincronización</div>
-              <div class="font-bold text-gray-900 dark:text-white">En Tiempo Real</div>
+              <div class="text-sm text-gray-500 dark:text-gray-400">{lang === 'es' ? 'Sincronización' : 'Sync'}</div>
+              <div class="font-bold text-gray-900 dark:text-white">{lang === 'es' ? 'En Tiempo Real' : 'Real-Time'}</div>
             </div>
           </div>
         </div>
@@ -123,8 +129,8 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
               <span class="text-2xl">📱</span>
             </div>
             <div>
-              <div class="text-sm text-gray-500 dark:text-gray-400">Disponible en</div>
-              <div class="font-bold text-gray-900 dark:text-white">Web y Móvil</div>
+              <div class="text-sm text-gray-500 dark:text-gray-400">{lang === 'es' ? 'Disponible en' : 'Available on'}</div>
+              <div class="font-bold text-gray-900 dark:text-white">{lang === 'es' ? 'Web y Móvil' : 'Web & Mobile'}</div>
             </div>
           </div>
         </div>

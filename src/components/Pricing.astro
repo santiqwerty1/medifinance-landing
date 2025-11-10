@@ -1,63 +1,48 @@
 ---
-// Pricing section with 3 tiers
+import { getTranslations } from '../i18n/translations';
+
+interface Props {
+  lang?: 'es' | 'en' | 'pt' | 'it';
+}
+
+const { lang = 'es' } = Astro.props;
+const t = getTranslations(lang);
+
+// Pricing plans with translations
 const plans = [
   {
-    name: 'Free',
+    name: t.pricing.plans.free.name,
     price: '0',
     currency: '$',
-    period: 'gratis para siempre',
-    description: 'Perfecto para comenzar',
-    badge: '🚀 Comienza Aquí',
-    features: [
-      'Hasta 20 pacientes',
-      'Sesiones ilimitadas',
-      'Exportar último mes',
-      'Sincronización en tiempo real',
-      'Web + App Android',
-      'Soporte por email',
-    ],
-    cta: 'Comenzar Gratis',
+    period: t.pricing.plans.free.period,
+    description: t.pricing.plans.free.description,
+    badge: t.pricing.plans.free.badge,
+    features: t.pricing.plans.free.features,
+    cta: t.pricing.plans.free.cta,
     popular: false,
   },
   {
-    name: 'Pro',
+    name: t.pricing.plans.pro.name,
     price: '2.99',
     currency: '$',
-    period: '/mes',
-    priceNote: 'Desde $2.99/mes según tu país',
-    description: 'Para profesionales en crecimiento',
-    badge: '⭐ Más Popular',
-    features: [
-      '✨ Pacientes ilimitados',
-      '✨ Historial completo',
-      '✨ Exportar todo',
-      'Recordatorios WhatsApp (próximamente)',
-      'PDF comprobantes (próximamente)',
-      'Paquetes prepagos (próximamente)',
-      'Soporte prioritario 24-48h',
-    ],
-    cta: 'Actualizar a Pro',
+    period: t.pricing.plans.pro.period,
+    priceNote: t.pricing.plans.pro.priceNote,
+    description: t.pricing.plans.pro.description,
+    badge: t.pricing.plans.pro.badge,
+    features: t.pricing.plans.pro.features,
+    cta: t.pricing.plans.pro.cta,
     popular: true,
   },
   {
-    name: 'Business',
+    name: t.pricing.plans.business.name,
     price: '5.99',
     currency: '$',
-    period: '/mes',
-    priceNote: 'Desde $5.99/mes según tu país',
-    description: 'Para equipos y consultorios',
-    badge: '🏢 Equipos',
-    features: [
-      '✨ Todo lo de Pro +',
-      '👥 Hasta 5 usuarios',
-      'Analíticas avanzadas (próximamente)',
-      'Agenda citas (próximamente)',
-      'Links de pago Mercado Pago (próximamente)',
-      'Reportes sin marca',
-      'Soporte prioritario 4h',
-      'API access (próximamente)',
-    ],
-    cta: 'Actualizar a Business',
+    period: t.pricing.plans.business.period,
+    priceNote: t.pricing.plans.business.priceNote,
+    description: t.pricing.plans.business.description,
+    badge: t.pricing.plans.business.badge,
+    features: t.pricing.plans.business.features,
+    cta: t.pricing.plans.business.cta,
     popular: false,
   },
 ];
@@ -69,14 +54,13 @@ const plans = [
     <!-- Section Header -->
     <div class="text-center mb-16">
       <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-        Precios justos para todos
+        {t.pricing.title}
       </h2>
       <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-        Precios adaptados a tu país con <strong>Purchasing Power Parity (PPP)</strong>.
-        Argentina paga en ARS, España en EUR, USA en USD. Justo para todos.
+        {t.pricing.subtitle}
       </p>
       <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
-        🌎 Disponible en Argentina, México, España, USA y más de 30 países
+        🌎 {t.pricing.note}
       </p>
     </div>
 
@@ -191,9 +175,7 @@ const plans = [
     <!-- Note -->
     <div class="text-center mt-12 max-w-2xl mx-auto">
       <p class="text-sm text-gray-600 dark:text-gray-400">
-        💳 <strong>Pagos seguros</strong> con Mercado Pago (Argentina, LatAm) y Stripe (Global).
-        <br />
-        🔄 Cancela cuando quieras. Sin permanencia ni contratos.
+        💳 {t.pricing.paymentNote}
       </p>
     </div>
 

@@ -1,52 +1,15 @@
 ---
 // Features section highlighting key capabilities
-const features = [
-  {
-    icon: '📊',
-    title: 'Panel de Control en Tiempo Real',
-    description: 'Visualiza tus ingresos mensuales, pacientes activos y sesiones con gráficos interactivos actualizados al instante.',
-  },
-  {
-    icon: '👥',
-    title: 'Gestión Completa de Pacientes',
-    description: 'Organiza toda la información de tus pacientes: datos de contacto, historial de sesiones y notas privadas en un solo lugar.',
-  },
-  {
-    icon: '💰',
-    title: 'Seguimiento de Ingresos',
-    description: 'Registra pagos en efectivo, transferencia o tarjeta. Exporta reportes mensuales en CSV para tu contador.',
-  },
-  {
-    icon: '📱',
-    title: 'Acceso Móvil Nativo',
-    description: 'App Android disponible. Trabaja desde tu celular, tablet o computadora. Tus datos siempre sincronizados.',
-  },
-  {
-    icon: '🔄',
-    title: 'Sincronización Multi-Dispositivo',
-    description: 'Actualización instantánea en todos tus dispositivos. Firestore real-time mantiene todo sincronizado automáticamente.',
-  },
-  {
-    icon: '🌐',
-    title: 'Soporte Bilingüe (ES/EN)',
-    description: 'Interfaz en español e inglés. Perfecto para profesionales que atienden pacientes internacionales.',
-  },
-  {
-    icon: '🔒',
-    title: 'Seguridad y Privacidad',
-    description: 'Autenticación segura con Firebase. Tus datos están encriptados y protegidos con estándares enterprise.',
-  },
-  {
-    icon: '☁️',
-    title: 'Backup Automático',
-    description: 'Nunca pierdas información. Exporta e importa backups en JSON. Tus datos siempre seguros en la nube.',
-  },
-  {
-    icon: '🎨',
-    title: 'Modo Oscuro',
-    description: 'Trabaja de noche sin cansar la vista. Alterna entre tema claro y oscuro con un solo clic.',
-  },
-];
+import { getTranslations } from '../i18n/translations';
+
+interface Props {
+  lang?: 'es' | 'en' | 'pt' | 'it';
+}
+
+const { lang = 'es' } = Astro.props;
+const t = getTranslations(lang);
+
+const features = t.features.items;
 ---
 
 <section id="features" class="py-20 bg-white dark:bg-gray-900">
@@ -55,11 +18,10 @@ const features = [
     <!-- Section Header -->
     <div class="text-center mb-16">
       <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-        Todo lo que necesitas para gestionar tu consultorio
+        {t.features.title}
       </h2>
       <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-        Una solución completa diseñada específicamente para psicólogos, terapeutas, nutricionistas,
-        fisioterapeutas y otros profesionales de la salud independientes.
+        {t.features.subtitle}
       </p>
     </div>
 
