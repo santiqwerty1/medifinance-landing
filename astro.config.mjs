@@ -10,5 +10,11 @@ export default defineConfig({
   },
   output: 'static',
   site: 'https://medifinance.app',
-
+  i18n: {
+    defaultLocale: 'es',
+    locales: ['es', 'en'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
 });
