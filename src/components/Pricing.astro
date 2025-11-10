@@ -1,0 +1,201 @@
+---
+// Pricing section with 3 tiers
+const plans = [
+  {
+    name: 'Free',
+    price: '0',
+    currency: '$',
+    period: 'gratis para siempre',
+    description: 'Perfecto para comenzar',
+    badge: '🚀 Comienza Aquí',
+    features: [
+      'Hasta 20 pacientes',
+      'Sesiones ilimitadas',
+      'Exportar último mes',
+      'Sincronización en tiempo real',
+      'Web + App Android',
+      'Soporte por email',
+    ],
+    cta: 'Comenzar Gratis',
+    popular: false,
+  },
+  {
+    name: 'Pro',
+    price: '2.99',
+    currency: '$',
+    period: '/mes',
+    priceNote: 'Desde $2.99/mes según tu país',
+    description: 'Para profesionales en crecimiento',
+    badge: '⭐ Más Popular',
+    features: [
+      '✨ Pacientes ilimitados',
+      '✨ Historial completo',
+      '✨ Exportar todo',
+      'Recordatorios WhatsApp (próximamente)',
+      'PDF comprobantes (próximamente)',
+      'Paquetes prepagos (próximamente)',
+      'Soporte prioritario 24-48h',
+    ],
+    cta: 'Actualizar a Pro',
+    popular: true,
+  },
+  {
+    name: 'Business',
+    price: '5.99',
+    currency: '$',
+    period: '/mes',
+    priceNote: 'Desde $5.99/mes según tu país',
+    description: 'Para equipos y consultorios',
+    badge: '🏢 Equipos',
+    features: [
+      '✨ Todo lo de Pro +',
+      '👥 Hasta 5 usuarios',
+      'Analíticas avanzadas (próximamente)',
+      'Agenda citas (próximamente)',
+      'Links de pago Mercado Pago (próximamente)',
+      'Reportes sin marca',
+      'Soporte prioritario 4h',
+      'API access (próximamente)',
+    ],
+    cta: 'Actualizar a Business',
+    popular: false,
+  },
+];
+---
+
+<section id="pricing" class="py-20 bg-gray-50 dark:bg-gray-800">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        Precios justos para todos
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+        Precios adaptados a tu país con <strong>Purchasing Power Parity (PPP)</strong>.
+        Argentina paga en ARS, España en EUR, USA en USD. Justo para todos.
+      </p>
+      <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
+        🌎 Disponible en Argentina, México, España, USA y más de 30 países
+      </p>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {plans.map((plan) => (
+        <div
+          class={`relative rounded-2xl p-8 ${
+            plan.popular
+              ? 'bg-gradient-to-br from-purple-600 to-blue-600 text-white shadow-2xl scale-105 border-4 border-purple-400'
+              : 'bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700'
+          } transition-transform hover:scale-105`}
+        >
+          {plan.popular && (
+            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-yellow-400 text-yellow-900 rounded-full text-sm font-bold">
+              {plan.badge}
+            </div>
+          )}
+
+          {!plan.popular && (
+            <div class="text-center mb-4">
+              <span class="text-2xl">{plan.badge}</span>
+            </div>
+          )}
+
+          <div class="text-center mb-6">
+            <h3
+              class={`text-2xl font-bold mb-2 ${
+                plan.popular ? 'text-white' : 'text-gray-900 dark:text-white'
+              }`}
+            >
+              {plan.name}
+            </h3>
+            <p
+              class={`text-sm ${
+                plan.popular ? 'text-purple-100' : 'text-gray-600 dark:text-gray-400'
+              }`}
+            >
+              {plan.description}
+            </p>
+          </div>
+
+          <div class="text-center mb-6">
+            <div class="flex items-baseline justify-center">
+              <span
+                class={`text-5xl font-bold ${
+                  plan.popular ? 'text-white' : 'text-gray-900 dark:text-white'
+                }`}
+              >
+                {plan.currency}{plan.price}
+              </span>
+              <span
+                class={`ml-2 ${
+                  plan.popular ? 'text-purple-100' : 'text-gray-600 dark:text-gray-400'
+                }`}
+              >
+                {plan.period}
+              </span>
+            </div>
+            {plan.priceNote && (
+              <p
+                class={`text-xs mt-2 ${
+                  plan.popular ? 'text-purple-100' : 'text-gray-500 dark:text-gray-500'
+                }`}
+              >
+                {plan.priceNote}
+              </p>
+            )}
+          </div>
+
+          <ul class="space-y-4 mb-8">
+            {plan.features.map((feature) => (
+              <li class="flex items-start gap-3">
+                <svg
+                  class={`w-6 h-6 flex-shrink-0 ${
+                    plan.popular ? 'text-yellow-300' : 'text-green-500'
+                  }`}
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span
+                  class={`text-sm ${
+                    plan.popular ? 'text-white' : 'text-gray-700 dark:text-gray-300'
+                  }`}
+                >
+                  {feature}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="https://app.medifinance.app"
+            class={`block w-full py-3 px-6 text-center rounded-xl font-semibold transition-all ${
+              plan.popular
+                ? 'bg-white text-purple-600 hover:bg-gray-100 shadow-lg'
+                : 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700'
+            }`}
+          >
+            {plan.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- Note -->
+    <div class="text-center mt-12 max-w-2xl mx-auto">
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        💳 <strong>Pagos seguros</strong> con Mercado Pago (Argentina, LatAm) y Stripe (Global).
+        <br />
+        🔄 Cancela cuando quieras. Sin permanencia ni contratos.
+      </p>
+    </div>
+
+  </div>
+</section>
