@@ -7,9 +7,35 @@ Allow: /
 # Sitemap location
 Sitemap: https://medifinance.app/sitemap-index.xml
 
-# Allow major search engines full access
+# Major Search Engines - Explicit Allow
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
+Allow: /
+
+# Privacy-focused Search Engines
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Alternative Search Engines
+User-agent: Slurp
+Allow: /
+
+# Brave Search
+User-agent: Applebot
+Allow: /
+
+# Ecosia
+User-agent: ecosia
+Allow: /
+
+# Qwant
+User-agent: Qwantify
 Allow: /

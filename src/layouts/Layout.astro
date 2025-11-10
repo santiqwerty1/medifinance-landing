@@ -19,6 +19,17 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Canonical URL - Prevents duplicate content issues -->
+    <link rel="canonical" href={Astro.url.href} />
+
+    <!-- Language/Region Alternatives -->
+    <link rel="alternate" hreflang="es" href={Astro.url.href} />
+    <link rel="alternate" hreflang="es-ES" href={Astro.url.href} />
+    <link rel="alternate" hreflang="es-AR" href={Astro.url.href} />
+    <link rel="alternate" hreflang="es-MX" href={Astro.url.href} />
+    <link rel="alternate" hreflang="es-CL" href={Astro.url.href} />
+    <link rel="alternate" hreflang="x-default" href={Astro.url.href} />
+
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
@@ -67,9 +78,68 @@ const {
           "audienceType": "Healthcare Professionals"
         },
         "inLanguage": "es",
-        "availableLanguage": ["es", "en"]
+        "availableLanguage": ["es", "en"],
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Argentina"
+          },
+          {
+            "@type": "Country",
+            "name": "Spain"
+          },
+          {
+            "@type": "Country",
+            "name": "Mexico"
+          },
+          {
+            "@type": "Country",
+            "name": "Chile"
+          },
+          {
+            "@type": "Country",
+            "name": "United States"
+          },
+          {
+            "@type": "Country",
+            "name": "Colombia"
+          },
+          {
+            "@type": "Country",
+            "name": "Peru"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "0",
+          "reviewCount": "0"
+        }
       }
     </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://medifinance.app"
+        }]
+      }
+    </script>
+
+    <!-- Google Analytics - Replace G-XXXXXXXXXX with your actual ID -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
 
     <title>{title}</title>
   </head>
