@@ -75,19 +75,6 @@ const {
   </head>
   <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
     <slot />
-
-    <!-- Smart redirect: Send logged-in users to app -->
-    <script>
-      // Check if user is logged in (detect Firebase auth cookie or localStorage)
-      const isLoggedIn =
-        document.cookie.includes('__session') || // Firebase session cookie
-        localStorage.getItem('firebase:authUser'); // Firebase auth state
-
-      // If logged in, redirect to app subdomain
-      if (isLoggedIn) {
-        window.location.href = 'https://app.medifinance.app';
-      }
-    </script>
   </body>
 </html>
 
