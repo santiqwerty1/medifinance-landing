@@ -6,6 +6,10 @@ export const translations = {
     // Meta
     siteTitle: 'MediFinance - Gestión Financiera para Profesionales de la Salud',
     siteDescription: 'Gestiona tus pacientes, sesiones e ingresos de forma simple y segura. Precios justos adaptados a tu país. Plan gratuito disponible para siempre.',
+    ogImageAlt: 'MediFinance - Gestión financiera para profesionales de la salud',
+    schemaDescription: 'Gestión financiera para profesionales de la salud con precios adaptados a tu país (PPP)',
+    audienceType: 'Profesionales de la Salud',
+    breadcrumbHome: 'Inicio',
 
     // Navigation
     nav: {
@@ -231,6 +235,10 @@ export const translations = {
     // Meta
     siteTitle: 'MediFinance - Financial Management for Healthcare Professionals',
     siteDescription: 'Manage your patients, sessions, and income simply and securely. Fair pricing adapted to your country. Free plan available forever.',
+    ogImageAlt: 'MediFinance - Financial management for healthcare professionals',
+    schemaDescription: 'Financial management for healthcare professionals with pricing adapted to your country (PPP)',
+    audienceType: 'Healthcare Professionals',
+    breadcrumbHome: 'Home',
 
     // Navigation
     nav: {
