@@ -9,4 +9,5 @@ export default defineConfig({
   },
   output: 'static',
   site: 'https://medifinance.app',
+
 });
