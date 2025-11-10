@@ -6,7 +6,7 @@ interface Props {
 
 const {
   title,
-  description = "Gestiona tus pacientes, sesiones e ingresos de forma simple y segura. Acceso desde web y móvil."
+  description = "Gestiona tus pacientes, sesiones e ingresos de forma simple y segura. Precios justos con PPP adaptados a tu país. Desde $2.99/mes."
 } = Astro.props;
 ---
 
@@ -39,6 +39,47 @@ const {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL('/og-image.png', Astro.url)} />
     <meta name="twitter:image:alt" content="MediFinance - Gestión financiera para profesionales de la salud" />
+
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "MediFinance",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web, Android",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Free Plan",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Gratis para siempre - Hasta 20 pacientes"
+          },
+          {
+            "@type": "Offer",
+            "name": "Pro Plan",
+            "price": "2.99",
+            "priceCurrency": "USD",
+            "description": "Desde $2.99/mes según tu país (PPP) - Pacientes ilimitados"
+          },
+          {
+            "@type": "Offer",
+            "name": "Business Plan",
+            "price": "5.99",
+            "priceCurrency": "USD",
+            "description": "Desde $5.99/mes según tu país (PPP) - Hasta 5 usuarios"
+          }
+        ],
+        "description": "Gestión financiera para profesionales de la salud con precios adaptados a tu país (PPP)",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Healthcare Professionals"
+        },
+        "inLanguage": "es",
+        "availableLanguage": ["es", "en"]
+      }
+    </script>
 
     <title>{title}</title>
   </head>
