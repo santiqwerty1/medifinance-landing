@@ -1,12 +1,13 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [],
+  integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },
   output: 'static',
-  site: 'https://medifinance.app', // Update this when you get your domain
+  site: 'https://medifinance.app',
 });
