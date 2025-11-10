@@ -5,11 +5,11 @@ const currentLang = getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname.replace(/^\/(es|en|pt|it)/, '') || '/';
 
 const languages = [
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'en', name: 'English', flag: '🇺🇸' },
+  { code: 'es', name: 'Español' },
+  { code: 'en', name: 'English' },
   // Ready for future:
-  // { code: 'pt', name: 'Português', flag: '🇧🇷' },
-  // { code: 'it', name: 'Italiano', flag: '🇮🇹' },
+  // { code: 'pt', name: 'Português' },
+  // { code: 'it', name: 'Italiano' },
 ];
 
 function getLanguageUrl(lang: string) {
@@ -27,29 +27,30 @@ function getLanguageUrl(lang: string) {
         aria-expanded="false"
         aria-haspopup="true"
       >
-        <span class="text-xl">{languages.find(l => l.code === currentLang)?.flag}</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+        </svg>
         <span>{languages.find(l => l.code === currentLang)?.name}</span>
         <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
         </svg>
       </button>
 
-      <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-lg bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+      <div class="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-lg bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
         <div class="py-1" role="menu" aria-orientation="vertical">
           {languages.map((lang) => (
             <a
               href={getLanguageUrl(lang.code)}
-              class={`flex items-center gap-3 px-4 py-2 text-sm ${
+              class={`flex items-center justify-between px-4 py-2 text-sm ${
                 currentLang === lang.code
                   ? 'bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
               } transition`}
               role="menuitem"
             >
-              <span class="text-xl">{lang.flag}</span>
               <span>{lang.name}</span>
               {currentLang === lang.code && (
-                <svg class="ml-auto w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
               )}
