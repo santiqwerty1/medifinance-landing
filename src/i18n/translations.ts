@@ -17,9 +17,21 @@ export const translations = {
     // Hero
     hero: {
       title: 'Gestión Financiera Simple para Profesionales de la Salud',
+      titlePart1: 'Gestión Financiera Simple para ',
+      titlePart2: 'Profesionales de la Salud',
       subtitle: 'Controla tus pacientes, sesiones e ingresos desde web y móvil. Gratis para siempre hasta 20 pacientes.',
       cta: 'Comenzar Gratis',
       ctaSecondary: 'Ver Demo',
+      badge: 'Gratis para siempre • Sin tarjeta de crédito',
+      noCreditCard: 'Sin tarjeta de crédito',
+      patientsFree: '20 pacientes gratis',
+      instantAccess: 'Acceso inmediato',
+      sync: 'Sincronización',
+      realTime: 'En Tiempo Real',
+      availableOn: 'Disponible en',
+      webMobile: 'Web y Móvil',
+      screenshotPlaceholder: 'Agrega una captura de pantalla aquí',
+      dashboardPreview: 'Vista Previa del Dashboard',
     },
 
     // Features
@@ -191,6 +203,10 @@ export const translations = {
       title: '¿Listo para simplificar tu gestión financiera?',
       subtitle: 'Únete a cientos de profesionales que ya confían en MediFinance',
       button: 'Comenzar Ahora - Es Gratis',
+      viewPlans: 'Ver Planes',
+      freeForever: 'Gratis para siempre',
+      noCreditCard: 'Sin tarjeta de crédito',
+      minutesSetup: 'Configuración en 5 minutos',
     },
 
     // Footer
@@ -226,9 +242,21 @@ export const translations = {
     // Hero
     hero: {
       title: 'Simple Financial Management for Healthcare Professionals',
+      titlePart1: 'Simple Financial Management for ',
+      titlePart2: 'Healthcare Professionals',
       subtitle: 'Manage your patients, sessions, and income from web and mobile. Free forever for up to 20 patients.',
       cta: 'Start Free',
       ctaSecondary: 'View Demo',
+      badge: 'Free forever • No credit card required',
+      noCreditCard: 'No credit card',
+      patientsFree: '20 patients free',
+      instantAccess: 'Instant access',
+      sync: 'Sync',
+      realTime: 'Real-Time',
+      availableOn: 'Available on',
+      webMobile: 'Web & Mobile',
+      screenshotPlaceholder: 'Add a screenshot here',
+      dashboardPreview: 'Dashboard Preview',
     },
 
     // Features
@@ -400,6 +428,10 @@ export const translations = {
       title: 'Ready to simplify your financial management?',
       subtitle: 'Join hundreds of professionals who already trust MediFinance',
       button: 'Get Started - It\'s Free',
+      viewPlans: 'View Plans',
+      freeForever: 'Free forever',
+      noCreditCard: 'No credit card',
+      minutesSetup: '5 minute setup',
     },
 
     // Footer
