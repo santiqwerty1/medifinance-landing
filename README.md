@@ -273,8 +273,8 @@ Update meta tags in `src/layouts/Layout.astro`:
 
 After deploying to Vercel:
 
-- [ ] Update `site` URL in `astro.config.mjs`
-- [ ] Update all CTA links to point to your dashboard
+- [x] Update `site` URL in `astro.config.mjs`
+- [x] Update all CTA links to point to your dashboard
 - [ ] Add real dashboard screenshots
 - [ ] Create Open Graph image (`public/og-image.png`)
 - [ ] Install and configure sitemap

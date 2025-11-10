@@ -8,5 +8,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   output: 'static',
-  site: 'https://yourdomain.com', // Update this when you get your domain
+  site: 'https://medifinance.app', // Update this when you get your domain
 });
