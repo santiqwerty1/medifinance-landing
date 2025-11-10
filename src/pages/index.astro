@@ -6,16 +6,20 @@ import Pricing from '../components/Pricing.astro';
 import FAQ from '../components/FAQ.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
+import { getTranslations } from '../i18n/translations';
+
+const t = getTranslations('es');
 ---
 
 <Layout
-  title="MediFinance - Gestión Financiera para Profesionales de la Salud"
-  description="Gestiona tus pacientes, sesiones e ingresos de forma simple y segura. Precios justos adaptados a tu país. Plan gratuito disponible para siempre."
+  title={t.siteTitle}
+  description={t.siteDescription}
+  lang="es"
 >
-  <Hero />
-  <Features />
-  <Pricing />
-  <FAQ />
-  <CTA />
-  <Footer />
+  <Hero lang="es" />
+  <Features lang="es" />
+  <Pricing lang="es" />
+  <FAQ lang="es" />
+  <CTA lang="es" />
+  <Footer lang="es" />
 </Layout>

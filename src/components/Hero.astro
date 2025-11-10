@@ -39,14 +39,14 @@ const t = getTranslations(lang);
       <div class="text-center lg:text-left">
         <div class="inline-block mb-4 px-4 py-2 bg-purple-100 dark:bg-purple-900/50 rounded-full">
           <span class="text-purple-700 dark:text-purple-300 font-semibold text-sm">
-            ✨ {lang === 'es' ? 'Gratis para siempre • Sin tarjeta de crédito' : 'Free forever • No credit card required'}
+            ✨ {t.hero.badge}
           </span>
         </div>
 
         <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-          {t.hero.title.split('para')[0]}
+          {t.hero.titlePart1}
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
-            {lang === 'es' ? 'Profesionales de la Salud' : 'Healthcare Professionals'}
+            {t.hero.titlePart2}
           </span>
         </h1>
 
@@ -76,19 +76,19 @@ const t = getTranslations(lang);
             <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            {lang === 'es' ? 'Sin tarjeta de crédito' : 'No credit card'}
+            {t.hero.noCreditCard}
           </div>
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            {lang === 'es' ? '20 pacientes gratis' : '20 patients free'}
+            {t.hero.patientsFree}
           </div>
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
-            {lang === 'es' ? 'Acceso inmediato' : 'Instant access'}
+            {t.hero.instantAccess}
           </div>
         </div>
       </div>
@@ -101,10 +101,10 @@ const t = getTranslations(lang);
             <div class="text-center p-8">
               <div class="text-6xl mb-4">📊</div>
               <p class="text-gray-600 dark:text-gray-400 font-semibold">
-                Dashboard Preview
+                {t.hero.dashboardPreview}
               </p>
               <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
-                {lang === 'es' ? 'Agrega una captura de pantalla aquí' : 'Add a screenshot here'}
+                {t.hero.screenshotPlaceholder}
               </p>
             </div>
           </div>
@@ -117,8 +117,8 @@ const t = getTranslations(lang);
               <span class="text-2xl">✓</span>
             </div>
             <div>
-              <div class="text-sm text-gray-500 dark:text-gray-400">{lang === 'es' ? 'Sincronización' : 'Sync'}</div>
-              <div class="font-bold text-gray-900 dark:text-white">{lang === 'es' ? 'En Tiempo Real' : 'Real-Time'}</div>
+              <div class="text-sm text-gray-500 dark:text-gray-400">{t.hero.sync}</div>
+              <div class="font-bold text-gray-900 dark:text-white">{t.hero.realTime}</div>
             </div>
           </div>
         </div>
@@ -129,8 +129,8 @@ const t = getTranslations(lang);
               <span class="text-2xl">📱</span>
             </div>
             <div>
-              <div class="text-sm text-gray-500 dark:text-gray-400">{lang === 'es' ? 'Disponible en' : 'Available on'}</div>
-              <div class="font-bold text-gray-900 dark:text-white">{lang === 'es' ? 'Web y Móvil' : 'Web & Mobile'}</div>
+              <div class="text-sm text-gray-500 dark:text-gray-400">{t.hero.availableOn}</div>
+              <div class="font-bold text-gray-900 dark:text-white">{t.hero.webMobile}</div>
             </div>
           </div>
         </div>
