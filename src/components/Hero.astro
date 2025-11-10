@@ -96,18 +96,12 @@ const t = getTranslations(lang);
       <!-- Right: Screenshot/Image -->
       <div class="relative">
         <div class="relative rounded-2xl shadow-2xl overflow-hidden border-8 border-gray-800 dark:border-gray-700">
-          <!-- Placeholder for screenshot - you'll replace this with actual screenshot -->
-          <div class="aspect-video bg-gradient-to-br from-purple-100 to-blue-100 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center">
-            <div class="text-center p-8">
-              <div class="text-6xl mb-4">📊</div>
-              <p class="text-gray-600 dark:text-gray-400 font-semibold">
-                {t.hero.dashboardPreview}
-              </p>
-              <p class="text-sm text-gray-500 dark:text-gray-500 mt-2">
-                {t.hero.screenshotPlaceholder}
-              </p>
-            </div>
-          </div>
+          <img
+            src="/dashboard-screenshot.png"
+            alt={t.hero.dashboardPreview}
+            class="w-full h-auto"
+            loading="eager"
+          />
         </div>
 
         <!-- Floating stats badges -->
