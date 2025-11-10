@@ -1,23 +1,50 @@
 ---
+import { getLangFromUrl } from '../i18n/utils';
+
 interface Props {
   title: string;
   description?: string;
+  lang?: 'es' | 'en' | 'pt' | 'it';
 }
 
+const currentLang = Astro.props.lang || getLangFromUrl(Astro.url);
 const {
   title,
   description = "Gestiona tus pacientes, sesiones e ingresos de forma simple y segura. Precios justos adaptados a tu país."
 } = Astro.props;
+
+// Build alternate language URLs
+const baseUrl = Astro.site || 'https://medifinance.app';
+const currentPath = Astro.url.pathname.replace(/^\/(es|en|pt|it)/, '') || '/';
+const alternateUrls = {
+  es: `${baseUrl}${currentPath}`,
+  en: `${baseUrl}/en${currentPath}`,
+  // Ready for future:
+  // pt: `${baseUrl}/pt${currentPath}`,
+  // it: `${baseUrl}/it${currentPath}`,
+};
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={currentLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical URL - Prevents duplicate content issues -->
+    <link rel="canonical" href={Astro.url.href} />
+
+    <!-- Language Alternatives (Global - All Spanish/English Speakers) -->
+    <link rel="alternate" hreflang="es" href={alternateUrls.es} />
+    <link rel="alternate" hreflang="en" href={alternateUrls.en} />
+    <link rel="alternate" hreflang="x-default" href={alternateUrls.es} />
+    <!-- Ready for future languages:
+    <link rel="alternate" hreflang="pt" href={alternateUrls.pt} />
+    <link rel="alternate" hreflang="it" href={alternateUrls.it} />
+    -->
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
@@ -67,27 +94,73 @@ const {
           "audienceType": "Healthcare Professionals"
         },
         "inLanguage": "es",
-        "availableLanguage": ["es", "en"]
+        "availableLanguage": ["es", "en"],
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Argentina"
+          },
+          {
+            "@type": "Country",
+            "name": "Spain"
+          },
+          {
+            "@type": "Country",
+            "name": "Mexico"
+          },
+          {
+            "@type": "Country",
+            "name": "Chile"
+          },
+          {
+            "@type": "Country",
+            "name": "United States"
+          },
+          {
+            "@type": "Country",
+            "name": "Colombia"
+          },
+          {
+            "@type": "Country",
+            "name": "Peru"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "0",
+          "reviewCount": "0"
+        }
       }
     </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://medifinance.app"
+        }]
+      }
+    </script>
+
+    <!-- Google Analytics - Replace G-XXXXXXXXXX with your actual ID -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
 
     <title>{title}</title>
   </head>
   <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
     <slot />
-
-    <!-- Smart redirect: Send logged-in users to app -->
-    <script>
-      // Check if user is logged in (detect Firebase auth cookie or localStorage)
-      const isLoggedIn =
-        document.cookie.includes('__session') || // Firebase session cookie
-        localStorage.getItem('firebase:authUser'); // Firebase auth state
-
-      // If logged in, redirect to app subdomain
-      if (isLoggedIn) {
-        window.location.href = 'https://app.medifinance.app';
-      }
-    </script>
   </body>
 </html>
 

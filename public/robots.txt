@@ -1,6 +1,41 @@
-# Allow all crawlers
+# robots.txt for MediFinance Landing Page
+
+# Allow all search engines
 User-agent: *
 Allow: /
 
-# Sitemap location (update with your actual domain)
-Sitemap: https://yourdomain.com/sitemap-index.xml
+# Sitemap location
+Sitemap: https://medifinance.app/sitemap-index.xml
+
+# Major Search Engines - Explicit Allow
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Privacy-focused Search Engines
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Alternative Search Engines
+User-agent: Slurp
+Allow: /
+
+# Brave Search
+User-agent: Applebot
+Allow: /
+
+# Ecosia
+User-agent: ecosia
+Allow: /
+
+# Qwant
+User-agent: Qwantify
+Allow: /
