@@ -44,6 +44,16 @@ export const translations = {
       subtitle: 'Herramientas profesionales diseñadas para terapeutas, psicólogos y profesionales de la salud',
       items: [
         {
+          icon: '⚡',
+          title: 'Velocidad Global Ultrarrápida',
+          description: '36 regiones en 6 continentes garantizan menos de 50ms de respuesta desde cualquier lugar de la Tierra. Tu región más cercana se selecciona automáticamente.',
+        },
+        {
+          icon: '⚡',
+          title: 'Respuesta Instantánea',
+          description: 'La interfaz responde al instante mientras guardamos en segundo plano. Sin esperas, sin demoras. Parece magia, pero es tecnología optimista.',
+        },
+        {
           icon: '📊',
           title: 'Panel de Control en Tiempo Real',
           description: 'Visualiza tus ingresos mensuales, pacientes activos y sesiones con gráficos interactivos actualizados al instante.',
@@ -59,19 +69,14 @@ export const translations = {
           description: 'Registra pagos en efectivo, transferencia o tarjeta. Exporta reportes mensuales en CSV para tu contador.',
         },
         {
-          icon: '📱',
-          title: 'Acceso Móvil Nativo',
-          description: 'App Android disponible. Trabaja desde tu celular, tablet o computadora. Tus datos siempre sincronizados.',
+          icon: '📡',
+          title: 'Funciona Sin Internet',
+          description: 'Sigue trabajando aunque pierdas conexión. Tus cambios se sincronizan automáticamente cuando vuelves online. Nunca pierdas productividad.',
         },
         {
           icon: '🔄',
           title: 'Sincronización Multi-Dispositivo',
-          description: 'Actualización instantánea en todos tus dispositivos. Firestore real-time mantiene todo sincronizado automáticamente.',
-        },
-        {
-          icon: '🌐',
-          title: 'Soporte Bilingüe (ES/EN)',
-          description: 'Interfaz en español e inglés. Perfecto para profesionales que atienden pacientes internacionales.',
+          description: 'Actualización instantánea en celular, tablet y computadora. Tus datos siempre disponibles donde los necesites.',
         },
         {
           icon: '🔒',
@@ -79,14 +84,9 @@ export const translations = {
           description: 'Autenticación segura con Firebase. Tus datos están encriptados y protegidos con estándares enterprise.',
         },
         {
-          icon: '☁️',
-          title: 'Backup Automático',
-          description: 'Nunca pierdas información. Exporta e importa backups en JSON. Tus datos siempre seguros en la nube.',
-        },
-        {
-          icon: '🎨',
-          title: 'Modo Oscuro',
-          description: 'Trabaja de noche sin cansar la vista. Alterna entre tema claro y oscuro con un solo clic.',
+          icon: '♿',
+          title: 'Totalmente Accesible',
+          description: 'WCAG 2.1 Nivel AA. Navegación completa con teclado, compatible con lectores de pantalla. Diseñado para todos.',
         },
       ],
     },
@@ -273,6 +273,16 @@ export const translations = {
       subtitle: 'Professional tools designed for therapists, psychologists, and healthcare professionals',
       items: [
         {
+          icon: '⚡',
+          title: 'Lightning-Fast Worldwide',
+          description: '36 regions across 6 continents ensure <50ms response time from anywhere on Earth. Your nearest region is automatically selected.',
+        },
+        {
+          icon: '⚡',
+          title: 'Instant Response',
+          description: 'Interface responds instantly while saving in the background. No waiting, no delays. Feels like magic, powered by optimistic updates.',
+        },
+        {
           icon: '📊',
           title: 'Real-Time Dashboard',
           description: 'Visualize your monthly income, active patients, and sessions with interactive graphs updated instantly.',
@@ -288,19 +298,14 @@ export const translations = {
           description: 'Record cash, transfer, or card payments. Export monthly reports in CSV for your accountant.',
         },
         {
-          icon: '📱',
-          title: 'Native Mobile Access',
-          description: 'Android app available. Work from your phone, tablet, or computer. Your data always synced.',
+          icon: '📡',
+          title: 'Works Offline',
+          description: 'Keep working even if you lose connection. Your changes sync automatically when back online. Never lose productivity.',
         },
         {
           icon: '🔄',
           title: 'Multi-Device Sync',
-          description: 'Instant updates across all your devices. Firestore real-time keeps everything synced automatically.',
-        },
-        {
-          icon: '🌐',
-          title: 'Bilingual Support (ES/EN)',
-          description: 'Interface in Spanish and English. Perfect for professionals serving international patients.',
+          description: 'Instant updates across phone, tablet, and computer. Your data always available wherever you need it.',
         },
         {
           icon: '🔒',
@@ -308,14 +313,9 @@ export const translations = {
           description: 'Secure authentication with Firebase. Your data is encrypted and protected with enterprise standards.',
         },
         {
-          icon: '☁️',
-          title: 'Automatic Backup',
-          description: 'Never lose information. Export and import backups in JSON. Your data always safe in the cloud.',
-        },
-        {
-          icon: '🎨',
-          title: 'Dark Mode',
-          description: 'Work at night without eye strain. Toggle between light and dark theme with one click.',
+          icon: '♿',
+          title: 'Fully Accessible',
+          description: 'WCAG 2.1 Level AA. Full keyboard navigation, screen reader compatible. Designed for everyone.',
         },
       ],
     },
