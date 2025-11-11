@@ -70,13 +70,13 @@ export const translations = {
         },
         {
           icon: '📱',
-          title: 'Acceso Móvil Nativo',
-          description: 'App Android disponible. Trabaja desde tu celular, tablet o computadora. Tus datos siempre sincronizados.',
+          title: 'Acceso Desde Cualquier Dispositivo',
+          description: 'Funciona en celular, tablet y computadora desde tu navegador. App Android nativa próximamente. Tus datos siempre sincronizados.',
         },
         {
           icon: '📡',
-          title: 'Funciona Sin Internet',
-          description: 'Sigue trabajando aunque pierdas conexión. Tus cambios se sincronizan automáticamente cuando vuelves online. Nunca pierdas productividad.',
+          title: 'Modo Sin Conexión',
+          description: 'Una vez conectado, continúa trabajando aunque pierdas internet. Todo se sincroniza automáticamente cuando vuelves online.',
         },
         {
           icon: '🔄',
@@ -85,8 +85,8 @@ export const translations = {
         },
         {
           icon: '🌐',
-          title: 'Soporte Bilingüe (ES/EN)',
-          description: 'Interfaz en español e inglés. Perfecto para profesionales que atienden pacientes internacionales.',
+          title: 'Interfaz Multilingüe',
+          description: 'Disponible en español e inglés. Próximamente: portugués, italiano y más idiomas. Cambia el idioma con un clic.',
         },
         {
           icon: '🔒',
@@ -319,13 +319,13 @@ export const translations = {
         },
         {
           icon: '📱',
-          title: 'Native Mobile Access',
-          description: 'Android app available. Work from your phone, tablet, or computer. Your data always synced.',
+          title: 'Access From Any Device',
+          description: 'Works on phone, tablet, and computer from your browser. Native Android app coming soon. Your data always synced.',
         },
         {
           icon: '📡',
-          title: 'Works Offline',
-          description: 'Keep working even if you lose connection. Your changes sync automatically when back online. Never lose productivity.',
+          title: 'Offline Mode',
+          description: 'Once connected, continue working even if you lose internet. Everything syncs automatically when back online.',
         },
         {
           icon: '🔄',
@@ -334,8 +334,8 @@ export const translations = {
         },
         {
           icon: '🌐',
-          title: 'Bilingual Support (ES/EN)',
-          description: 'Interface in Spanish and English. Perfect for professionals serving international patients.',
+          title: 'Multi-Language Interface',
+          description: 'Available in Spanish and English. Coming soon: Portuguese, Italian, and more languages. Switch with one click.',
         },
         {
           icon: '🔒',
