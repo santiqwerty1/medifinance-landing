@@ -49,7 +49,7 @@ export const translations = {
           description: '36 regiones en 6 continentes garantizan menos de 50ms de respuesta desde cualquier lugar de la Tierra. Automáticamente te conecta al servidor más cercano.',
         },
         {
-          icon: '⚡',
+          icon: '🚀',
           title: 'Respuesta Instantánea',
           description: 'La interfaz responde al instante mientras guardamos en segundo plano. Sin esperas, sin demoras. Parece magia, pero es tecnología optimista.',
         },
@@ -298,7 +298,7 @@ export const translations = {
           description: '36 regions across 6 continents ensure <50ms response time from anywhere on Earth. Automatically connects you to the nearest server.',
         },
         {
-          icon: '⚡',
+          icon: '🚀',
           title: 'Instant Response',
           description: 'Interface responds instantly while saving in the background. No waiting, no delays. Feels like magic, powered by optimistic updates.',
         },
