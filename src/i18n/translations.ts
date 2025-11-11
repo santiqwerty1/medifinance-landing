@@ -46,7 +46,7 @@ export const translations = {
         {
           icon: '⚡',
           title: 'Velocidad Global Ultrarrápida',
-          description: '36 regiones en 6 continentes garantizan menos de 50ms de respuesta desde cualquier lugar de la Tierra. Tu región más cercana se selecciona automáticamente.',
+          description: '36 regiones en 6 continentes garantizan menos de 50ms de respuesta desde cualquier lugar de la Tierra. Automáticamente te conecta al servidor más cercano.',
         },
         {
           icon: '⚡',
@@ -69,6 +69,11 @@ export const translations = {
           description: 'Registra pagos en efectivo, transferencia o tarjeta. Exporta reportes mensuales en CSV para tu contador.',
         },
         {
+          icon: '📱',
+          title: 'Acceso Móvil Nativo',
+          description: 'App Android disponible. Trabaja desde tu celular, tablet o computadora. Tus datos siempre sincronizados.',
+        },
+        {
           icon: '📡',
           title: 'Funciona Sin Internet',
           description: 'Sigue trabajando aunque pierdas conexión. Tus cambios se sincronizan automáticamente cuando vuelves online. Nunca pierdas productividad.',
@@ -76,12 +81,27 @@ export const translations = {
         {
           icon: '🔄',
           title: 'Sincronización Multi-Dispositivo',
-          description: 'Actualización instantánea en celular, tablet y computadora. Tus datos siempre disponibles donde los necesites.',
+          description: 'Actualización instantánea en todos tus dispositivos. Firestore real-time mantiene todo sincronizado automáticamente.',
+        },
+        {
+          icon: '🌐',
+          title: 'Soporte Bilingüe (ES/EN)',
+          description: 'Interfaz en español e inglés. Perfecto para profesionales que atienden pacientes internacionales.',
         },
         {
           icon: '🔒',
           title: 'Seguridad y Privacidad',
           description: 'Autenticación segura con Firebase. Tus datos están encriptados y protegidos con estándares enterprise.',
+        },
+        {
+          icon: '☁️',
+          title: 'Backup Automático',
+          description: 'Nunca pierdas información. Exporta e importa backups en JSON. Tus datos siempre seguros en la nube.',
+        },
+        {
+          icon: '🎨',
+          title: 'Modo Oscuro',
+          description: 'Trabaja de noche sin cansar la vista. Alterna entre tema claro y oscuro con un solo clic.',
         },
         {
           icon: '♿',
@@ -275,7 +295,7 @@ export const translations = {
         {
           icon: '⚡',
           title: 'Lightning-Fast Worldwide',
-          description: '36 regions across 6 continents ensure <50ms response time from anywhere on Earth. Your nearest region is automatically selected.',
+          description: '36 regions across 6 continents ensure <50ms response time from anywhere on Earth. Automatically connects you to the nearest server.',
         },
         {
           icon: '⚡',
@@ -298,6 +318,11 @@ export const translations = {
           description: 'Record cash, transfer, or card payments. Export monthly reports in CSV for your accountant.',
         },
         {
+          icon: '📱',
+          title: 'Native Mobile Access',
+          description: 'Android app available. Work from your phone, tablet, or computer. Your data always synced.',
+        },
+        {
           icon: '📡',
           title: 'Works Offline',
           description: 'Keep working even if you lose connection. Your changes sync automatically when back online. Never lose productivity.',
@@ -305,12 +330,27 @@ export const translations = {
         {
           icon: '🔄',
           title: 'Multi-Device Sync',
-          description: 'Instant updates across phone, tablet, and computer. Your data always available wherever you need it.',
+          description: 'Instant updates across all your devices. Firestore real-time keeps everything synced automatically.',
+        },
+        {
+          icon: '🌐',
+          title: 'Bilingual Support (ES/EN)',
+          description: 'Interface in Spanish and English. Perfect for professionals serving international patients.',
         },
         {
           icon: '🔒',
           title: 'Security and Privacy',
           description: 'Secure authentication with Firebase. Your data is encrypted and protected with enterprise standards.',
+        },
+        {
+          icon: '☁️',
+          title: 'Automatic Backup',
+          description: 'Never lose information. Export and import backups in JSON. Your data always safe in the cloud.',
+        },
+        {
+          icon: '🎨',
+          title: 'Dark Mode',
+          description: 'Work at night without eye strain. Toggle between light and dark theme with one click.',
         },
         {
           icon: '♿',
