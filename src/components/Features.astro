@@ -28,36 +28,40 @@ const features = t.features.items;
     <!-- Features Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {features.map((feature, index) => (
-        <button
+        <div
           data-feature-card
           data-index={index}
-          class="feature-card group p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 hover:bg-gradient-to-br hover:from-purple-50 hover:to-blue-50 dark:hover:from-purple-900/20 dark:hover:to-blue-900/20 transition-all duration-300 hover:shadow-xl border border-transparent hover:border-purple-200 dark:hover:border-purple-700 cursor-pointer text-left w-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+          class="feature-card group p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 hover:bg-gradient-to-br hover:from-purple-50 hover:to-blue-50 dark:hover:from-purple-900/20 dark:hover:to-blue-900/20 transition-all duration-300 hover:shadow-xl border border-transparent hover:border-purple-200 dark:hover:border-purple-700 cursor-pointer select-text"
+          role="button"
+          tabindex="0"
           aria-expanded="false"
           aria-label={`${feature.title}. Click to expand`}
         >
-          <!-- Icon (always visible) -->
-          <div class="flex items-center justify-between mb-4">
-            <div class="text-6xl transition-all duration-300 feature-icon">
-              {feature.icon}
+          <!-- Header (Always Visible) -->
+          <div class="flex items-start justify-between mb-3">
+            <div class="flex items-center gap-3 flex-1">
+              <div class="text-5xl transition-transform duration-300 group-hover:scale-110">
+                {feature.icon}
+              </div>
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white leading-tight">
+                {feature.title}
+              </h3>
             </div>
             <!-- Expand/Collapse indicator -->
-            <div class="expand-indicator text-gray-400 dark:text-gray-500 transition-transform duration-300">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="expand-indicator text-gray-400 dark:text-gray-500 transition-transform duration-300 flex-shrink-0 ml-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
             </div>
           </div>
 
-          <!-- Expandable content -->
+          <!-- Expandable Description -->
           <div class="feature-content overflow-hidden transition-all duration-300" style="max-height: 0;">
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
-              {feature.title}
-            </h3>
-            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed pt-2">
               {feature.description}
             </p>
           </div>
-        </button>
+        </div>
       ))}
     </div>
 
@@ -72,11 +76,10 @@ const features = t.features.items;
     featureCards.forEach((card) => {
       const content = card.querySelector('.feature-content') as HTMLElement;
       const indicator = card.querySelector('.expand-indicator') as HTMLElement;
-      const icon = card.querySelector('.feature-icon') as HTMLElement;
 
-      if (!content || !indicator || !icon) return;
+      if (!content || !indicator) return;
 
-      card.addEventListener('click', () => {
+      const toggleCard = () => {
         const isExpanded = card.getAttribute('aria-expanded') === 'true';
 
         if (isExpanded) {
@@ -84,14 +87,33 @@ const features = t.features.items;
           card.setAttribute('aria-expanded', 'false');
           content.style.maxHeight = '0';
           indicator.style.transform = 'rotate(0deg)';
-          icon.style.fontSize = '3.75rem'; // text-6xl
         } else {
           // Expand
           card.setAttribute('aria-expanded', 'true');
           content.style.maxHeight = content.scrollHeight + 'px';
           indicator.style.transform = 'rotate(180deg)';
-          icon.style.fontSize = '3rem'; // text-5xl
         }
+      };
+
+      // Click handler - but allow text selection
+      card.addEventListener('mousedown', (e) => {
+        const mouseEvent = e as MouseEvent;
+        const startX = mouseEvent.clientX;
+        const startY = mouseEvent.clientY;
+
+        const handleMouseUp = (upEvent: MouseEvent) => {
+          const endX = upEvent.clientX;
+          const endY = upEvent.clientY;
+
+          // If mouse didn't move much, it's a click not a selection
+          if (Math.abs(endX - startX) < 5 && Math.abs(endY - startY) < 5) {
+            toggleCard();
+          }
+
+          document.removeEventListener('mouseup', handleMouseUp);
+        };
+
+        document.addEventListener('mouseup', handleMouseUp);
       });
 
       // Handle keyboard navigation
@@ -99,7 +121,7 @@ const features = t.features.items;
         const event = e as KeyboardEvent;
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
-          (card as HTMLElement).click();
+          toggleCard();
         }
       });
     });
@@ -109,10 +131,6 @@ const features = t.features.items;
 <style>
   .feature-card {
     position: relative;
-  }
-
-  .feature-icon {
-    transition: font-size 0.3s ease;
   }
 
   .feature-content {
@@ -126,5 +144,14 @@ const features = t.features.items;
 
   .expand-indicator {
     flex-shrink: 0;
+  }
+
+  /* Ensure text is selectable */
+  .feature-card h3,
+  .feature-card p {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
   }
 </style>
