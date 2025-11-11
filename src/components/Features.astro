@@ -70,9 +70,11 @@ const features = t.features.items;
     const featureCards = document.querySelectorAll('[data-feature-card]');
 
     featureCards.forEach((card) => {
-      const content = card.querySelector('.feature-content');
-      const indicator = card.querySelector('.expand-indicator');
-      const icon = card.querySelector('.feature-icon');
+      const content = card.querySelector('.feature-content') as HTMLElement;
+      const indicator = card.querySelector('.expand-indicator') as HTMLElement;
+      const icon = card.querySelector('.feature-icon') as HTMLElement;
+
+      if (!content || !indicator || !icon) return;
 
       card.addEventListener('click', () => {
         const isExpanded = card.getAttribute('aria-expanded') === 'true';
@@ -94,9 +96,10 @@ const features = t.features.items;
 
       // Handle keyboard navigation
       card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          card.click();
+        const event = e as KeyboardEvent;
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          (card as HTMLElement).click();
         }
       });
     });
