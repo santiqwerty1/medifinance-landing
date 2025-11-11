@@ -26,21 +26,102 @@ const features = t.features.items;
     </div>
 
     <!-- Features Grid -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {features.map((feature) => (
-        <div class="group p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 hover:bg-gradient-to-br hover:from-purple-50 hover:to-blue-50 dark:hover:from-purple-900/20 dark:hover:to-blue-900/20 transition-all duration-300 hover:shadow-xl border border-transparent hover:border-purple-200 dark:hover:border-purple-700">
-          <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">
-            {feature.icon}
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {features.map((feature, index) => (
+        <button
+          data-feature-card
+          data-index={index}
+          class="feature-card group p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 hover:bg-gradient-to-br hover:from-purple-50 hover:to-blue-50 dark:hover:from-purple-900/20 dark:hover:to-blue-900/20 transition-all duration-300 hover:shadow-xl border border-transparent hover:border-purple-200 dark:hover:border-purple-700 cursor-pointer text-left w-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+          aria-expanded="false"
+          aria-label={`${feature.title}. Click to expand`}
+        >
+          <!-- Icon (always visible) -->
+          <div class="flex items-center justify-between mb-4">
+            <div class="text-6xl transition-all duration-300 feature-icon">
+              {feature.icon}
+            </div>
+            <!-- Expand/Collapse indicator -->
+            <div class="expand-indicator text-gray-400 dark:text-gray-500 transition-transform duration-300">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
-            {feature.title}
-          </h3>
-          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-            {feature.description}
-          </p>
-        </div>
+
+          <!-- Expandable content -->
+          <div class="feature-content overflow-hidden transition-all duration-300" style="max-height: 0;">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              {feature.title}
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+              {feature.description}
+            </p>
+          </div>
+        </button>
       ))}
     </div>
 
   </div>
 </section>
+
+<script>
+  // Feature card expand/collapse functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const featureCards = document.querySelectorAll('[data-feature-card]');
+
+    featureCards.forEach((card) => {
+      const content = card.querySelector('.feature-content');
+      const indicator = card.querySelector('.expand-indicator');
+      const icon = card.querySelector('.feature-icon');
+
+      card.addEventListener('click', () => {
+        const isExpanded = card.getAttribute('aria-expanded') === 'true';
+
+        if (isExpanded) {
+          // Collapse
+          card.setAttribute('aria-expanded', 'false');
+          content.style.maxHeight = '0';
+          indicator.style.transform = 'rotate(0deg)';
+          icon.style.fontSize = '3.75rem'; // text-6xl
+        } else {
+          // Expand
+          card.setAttribute('aria-expanded', 'true');
+          content.style.maxHeight = content.scrollHeight + 'px';
+          indicator.style.transform = 'rotate(180deg)';
+          icon.style.fontSize = '3rem'; // text-5xl
+        }
+      });
+
+      // Handle keyboard navigation
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .feature-card {
+    position: relative;
+  }
+
+  .feature-icon {
+    transition: font-size 0.3s ease;
+  }
+
+  .feature-content {
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .feature-card[aria-expanded="true"] .feature-content {
+    opacity: 1;
+  }
+
+  .expand-indicator {
+    flex-shrink: 0;
+  }
+</style>
