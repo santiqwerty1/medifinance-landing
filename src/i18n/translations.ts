@@ -23,12 +23,12 @@ export const translations = {
       title: 'Gestión Financiera Simple para Profesionales de la Salud',
       titlePart1: 'Gestión Financiera Simple para ',
       titlePart2: 'Profesionales de la Salud',
-      subtitle: 'Controla tus pacientes, sesiones e ingresos desde web y móvil. Gratis para siempre hasta 20 pacientes.',
+      subtitle: 'Controla tus pacientes, sesiones e ingresos desde web y móvil. Gratis para siempre hasta 5 pacientes.',
       cta: 'Comenzar Gratis',
       ctaSecondary: 'Ver Demo',
       badge: 'Gratis para siempre • Sin tarjeta de crédito',
       noCreditCard: 'Sin tarjeta de crédito',
-      patientsFree: '20 pacientes gratis',
+      patientsFree: '5 pacientes gratis',
       instantAccess: 'Acceso inmediato',
       sync: 'Sincronización',
       realTime: 'En Tiempo Real',
@@ -46,7 +46,7 @@ export const translations = {
         {
           icon: '⚡',
           title: 'Velocidad Global Ultrarrápida',
-          description: '36 regiones en 6 continentes garantizan menos de 50ms de respuesta desde cualquier lugar de la Tierra. Automáticamente te conecta al servidor más cercano.',
+          description: 'Servidores en múltiples regiones del mundo garantizan respuesta ultrarrápida. Agregamos nuevas regiones automáticamente a medida que usuarios se registran desde todo el planeta.',
         },
         {
           icon: '🚀',
@@ -125,8 +125,8 @@ export const translations = {
           badge: '🚀 Comienza Aquí',
           cta: 'Comenzar Gratis',
           features: [
-            'Hasta 20 pacientes',
-            'Sesiones ilimitadas',
+            'Hasta 5 pacientes',
+            '4 sesiones/paciente/mes',
             'Exportar último mes',
             'Sincronización en tiempo real',
             'Web + App Android',
@@ -136,7 +136,7 @@ export const translations = {
         pro: {
           name: 'Pro',
           period: '/mes',
-          priceNote: 'Desde $2.99/mes según tu país',
+          priceNote: 'Desde $4.99/mes según tu país',
           description: 'Para profesionales en crecimiento',
           badge: '⭐ Más Popular',
           cta: 'Actualizar a Pro',
@@ -153,7 +153,7 @@ export const translations = {
         business: {
           name: 'Business',
           period: '/mes',
-          priceNote: 'Desde $5.99/mes según tu país',
+          priceNote: 'Desde $11.99/mes según tu país',
           description: 'Para equipos y consultorios',
           badge: '🏢 Equipos',
           cta: 'Actualizar a Business',
@@ -193,7 +193,7 @@ export const translations = {
         },
         {
           question: '¿Cuánto cuesta realmente?',
-          answer: 'El plan Free es gratis para siempre (hasta 20 pacientes). Pro cuesta desde $2.99/mes y Business desde $5.99/mes, dependiendo de tu país. Usamos precios justos adaptados al poder adquisitivo de cada región (PPP). Argentina paga en pesos argentinos, no en dólares.',
+          answer: 'El plan Free es gratis para siempre (hasta 5 pacientes). Pro cuesta desde $4.99/mes y Business desde $11.99/mes, dependiendo de tu país. Usamos precios justos adaptados al poder adquisitivo de cada región (PPP). Argentina paga en pesos argentinos, no en dólares.',
         },
         {
           question: '¿Puedo exportar mis datos?',
@@ -209,7 +209,7 @@ export const translations = {
         },
         {
           question: '¿Puedo cambiar de plan después?',
-          answer: 'Sí, puedes actualizar o bajar de plan cuando quieras. Si bajas de Pro a Free y tienes más de 20 pacientes, seguirás viendo todos tus datos pero no podrás agregar más pacientes hasta que estés por debajo del límite.',
+          answer: 'Sí, puedes actualizar o bajar de plan cuando quieras. Si bajas de Pro a Free y tienes más de 5 pacientes, seguirás viendo todos tus datos pero no podrás agregar más pacientes hasta que estés por debajo del límite.',
         },
         {
           question: '¿Sirve para mi especialidad?',
@@ -272,12 +272,12 @@ export const translations = {
       title: 'Simple Financial Management for Healthcare Professionals',
       titlePart1: 'Simple Financial Management for ',
       titlePart2: 'Healthcare Professionals',
-      subtitle: 'Manage your patients, sessions, and income from web and mobile. Free forever for up to 20 patients.',
+      subtitle: 'Manage your patients, sessions, and income from web and mobile. Free forever for up to 5 patients.',
       cta: 'Start Free',
       ctaSecondary: 'View Demo',
       badge: 'Free forever • No credit card required',
       noCreditCard: 'No credit card',
-      patientsFree: '20 patients free',
+      patientsFree: '5 patients free',
       instantAccess: 'Instant access',
       sync: 'Sync',
       realTime: 'Real-Time',
@@ -295,7 +295,7 @@ export const translations = {
         {
           icon: '⚡',
           title: 'Lightning-Fast Worldwide',
-          description: '36 regions across 6 continents ensure <50ms response time from anywhere on Earth. Automatically connects you to the nearest server.',
+          description: 'Servers in multiple regions worldwide ensure ultra-fast response times. We automatically add new regions as users sign in from all over the world.',
         },
         {
           icon: '🚀',
@@ -374,8 +374,8 @@ export const translations = {
           badge: '🚀 Start Here',
           cta: 'Start Free',
           features: [
-            'Up to 20 patients',
-            'Unlimited sessions',
+            'Up to 5 patients',
+            '4 sessions/patient/month',
             'Export last month',
             'Real-time sync',
             'Web + Android App',
@@ -385,7 +385,7 @@ export const translations = {
         pro: {
           name: 'Pro',
           period: '/month',
-          priceNote: 'From $2.99/month based on your country',
+          priceNote: 'From $4.99/month based on your country',
           description: 'For growing professionals',
           badge: '⭐ Most Popular',
           cta: 'Upgrade to Pro',
@@ -402,7 +402,7 @@ export const translations = {
         business: {
           name: 'Business',
           period: '/month',
-          priceNote: 'From $5.99/month based on your country',
+          priceNote: 'From $11.99/month based on your country',
           description: 'For teams and clinics',
           badge: '🏢 Teams',
           cta: 'Upgrade to Business',
@@ -442,7 +442,7 @@ export const translations = {
         },
         {
           question: 'How much does it really cost?',
-          answer: 'The Free plan is free forever (up to 20 patients). Pro costs from $2.99/month and Business from $5.99/month, depending on your country. We use fair pricing adapted to each region\'s purchasing power (PPP). Argentina pays in Argentine pesos, not dollars.',
+          answer: 'The Free plan is free forever (up to 5 patients). Pro costs from $4.99/month and Business from $11.99/month, depending on your country. We use fair pricing adapted to each region\'s purchasing power (PPP). Argentina pays in Argentine pesos, not dollars.',
         },
         {
           question: 'Can I export my data?',
@@ -458,7 +458,7 @@ export const translations = {
         },
         {
           question: 'Can I change plans later?',
-          answer: 'Yes, you can upgrade or downgrade anytime. If you downgrade from Pro to Free and have more than 20 patients, you\'ll still see all your data but can\'t add more patients until you\'re below the limit.',
+          answer: 'Yes, you can upgrade or downgrade anytime. If you downgrade from Pro to Free and have more than 5 patients, you\'ll still see all your data but can\'t add more patients until you\'re below the limit.',
         },
         {
           question: 'Does it work for my specialty?',
