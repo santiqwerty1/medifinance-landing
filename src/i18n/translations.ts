@@ -46,7 +46,7 @@ export const translations = {
         {
           icon: '⚡',
           title: 'Velocidad Global Ultrarrápida',
-          description: '36 regiones en 6 continentes garantizan menos de 50ms de respuesta desde cualquier lugar de la Tierra. Automáticamente te conecta al servidor más cercano.',
+          description: 'Servidores en múltiples regiones del mundo garantizan respuesta ultrarrápida. Agregamos nuevas regiones automáticamente a medida que usuarios se registran desde todo el planeta.',
         },
         {
           icon: '🚀',
@@ -295,7 +295,7 @@ export const translations = {
         {
           icon: '⚡',
           title: 'Lightning-Fast Worldwide',
-          description: '36 regions across 6 continents ensure <50ms response time from anywhere on Earth. Automatically connects you to the nearest server.',
+          description: 'Servers in multiple regions worldwide ensure ultra-fast response times. We automatically add new regions as users sign in from all over the world.',
         },
         {
           icon: '🚀',
