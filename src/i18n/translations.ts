@@ -136,7 +136,7 @@ export const translations = {
         pro: {
           name: 'Pro',
           period: '/mes',
-          priceNote: 'Desde $2.99/mes según tu país',
+          priceNote: 'Desde $4.99/mes según tu país',
           description: 'Para profesionales en crecimiento',
           badge: '⭐ Más Popular',
           cta: 'Actualizar a Pro',
@@ -153,7 +153,7 @@ export const translations = {
         business: {
           name: 'Business',
           period: '/mes',
-          priceNote: 'Desde $5.99/mes según tu país',
+          priceNote: 'Desde $11.99/mes según tu país',
           description: 'Para equipos y consultorios',
           badge: '🏢 Equipos',
           cta: 'Actualizar a Business',
@@ -193,7 +193,7 @@ export const translations = {
         },
         {
           question: '¿Cuánto cuesta realmente?',
-          answer: 'El plan Free es gratis para siempre (hasta 5 pacientes). Pro cuesta desde $2.99/mes y Business desde $5.99/mes, dependiendo de tu país. Usamos precios justos adaptados al poder adquisitivo de cada región (PPP). Argentina paga en pesos argentinos, no en dólares.',
+          answer: 'El plan Free es gratis para siempre (hasta 5 pacientes). Pro cuesta desde $4.99/mes y Business desde $11.99/mes, dependiendo de tu país. Usamos precios justos adaptados al poder adquisitivo de cada región (PPP). Argentina paga en pesos argentinos, no en dólares.',
         },
         {
           question: '¿Puedo exportar mis datos?',
@@ -385,7 +385,7 @@ export const translations = {
         pro: {
           name: 'Pro',
           period: '/month',
-          priceNote: 'From $2.99/month based on your country',
+          priceNote: 'From $4.99/month based on your country',
           description: 'For growing professionals',
           badge: '⭐ Most Popular',
           cta: 'Upgrade to Pro',
@@ -402,7 +402,7 @@ export const translations = {
         business: {
           name: 'Business',
           period: '/month',
-          priceNote: 'From $5.99/month based on your country',
+          priceNote: 'From $11.99/month based on your country',
           description: 'For teams and clinics',
           badge: '🏢 Teams',
           cta: 'Upgrade to Business',
@@ -442,7 +442,7 @@ export const translations = {
         },
         {
           question: 'How much does it really cost?',
-          answer: 'The Free plan is free forever (up to 5 patients). Pro costs from $2.99/month and Business from $5.99/month, depending on your country. We use fair pricing adapted to each region\'s purchasing power (PPP). Argentina pays in Argentine pesos, not dollars.',
+          answer: 'The Free plan is free forever (up to 5 patients). Pro costs from $4.99/month and Business from $11.99/month, depending on your country. We use fair pricing adapted to each region\'s purchasing power (PPP). Argentina pays in Argentine pesos, not dollars.',
         },
         {
           question: 'Can I export my data?',
